@@ -31,7 +31,7 @@ public class CalcController {
             writer.toReport("-\n");
             writer.toReport("*\n");
             writer.toReport("/\n");
-            writer.toReport("exit\n");
+            writer.toReport("0 : Back to menu\n");
             operation = reader.scanner();
 
             switch (operation) {
@@ -59,8 +59,8 @@ public class CalcController {
                     sendResultToStorage();
                     break;
                 }
-                case "exit": {
-                    System.exit(0);
+                case "0": {
+//                    accountMenuController.run();
                 }
                 default: {
                     run();
@@ -68,7 +68,6 @@ public class CalcController {
             }
         } while (true);
     }
-
     private void sendResultToStorage() {
         resultsStorage.add(calc.getNum1(), operation, calc.getNum2(), result);
     }

@@ -1,10 +1,10 @@
 package org.example.entity;
 
 public class Expression {
-    private double num1;
-    private double num2;
-    private String operation;
-    private double result;
+    private final double num1;
+    private final double num2;
+    private final String operation;
+    private final double result;
 
     public Expression(double num1, double num2, String operation, double result) {
         this.num1 = num1;

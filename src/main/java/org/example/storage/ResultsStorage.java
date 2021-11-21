@@ -11,7 +11,7 @@ public class ResultsStorage {
     private final Writer writer;
 
     public ResultsStorage(List<Expression> listOfResults, Writer writer) {
-        this.listOfResults = listOfResults;
+        ResultsStorage.listOfResults = listOfResults;
         this.writer = writer;
     }
 
@@ -23,5 +23,9 @@ public class ResultsStorage {
         for(Expression arr : listOfResults) {
             writer.toReport(arr.toString() + "\n");
         }
+    }
+
+    public void clear() {
+        listOfResults.clear();
     }
 }
