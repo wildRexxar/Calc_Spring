@@ -10,40 +10,33 @@ public class Calc {
     private double num2;
 
     @Autowired
-    public Calc(NumProcessing numProcessing){
+    public Calc(NumProcessing numProcessing) {
         this.numProcessing = numProcessing;
     }
 
-    public double plus(){
-        numInit();
+    public double plus() {
         return num1 + num2;
     }
 
-    public double minus(){
-        numInit();
+    public double minus() {
         return num1 - num2;
     }
 
     public double div() {
-        numInit();
         return num1 / num2;
     }
 
-    public double multi(){
-        numInit();
+    public double multi() {
         return num1 * num2;
     }
 
-    private void numInit() {
-        num1 = numProcessing.getNum();
-        num2 = numProcessing.getNum();
-    }
-
     public double getNum1() {
+        num1 = numProcessing.getNum();
         return num1;
     }
 
     public double getNum2() {
+        num2 = numProcessing.getNum();
         return num2;
     }
 }

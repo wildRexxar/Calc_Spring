@@ -17,7 +17,7 @@ public class NumProcessing {
         this.writer = writer;
     }
 
-    private boolean checkNumber () {
+    private boolean checkNumber() {
         number = reader.scanner();
         return (number.matches("(-|\\+)?\\d+"));
     }
