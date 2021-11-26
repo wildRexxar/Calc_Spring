@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 public class User {
     private String login;
     private String password;
-    private int id;
 
     @Autowired
     public User() {
@@ -22,25 +21,8 @@ public class User {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.id = login.hashCode();
-        this.login = login;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setId(String login) {
-        this.id = login.hashCode();
-    }
-
-    public int getId() {
-        return id;
     }
 
     public User createUser(String login, String password) {

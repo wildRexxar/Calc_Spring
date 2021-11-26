@@ -1,22 +1,15 @@
 package org.example.storage;
 
 import org.example.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 
 @Component
-public class UsersStorage {
-    private ArrayList<User> usersList;
+public class UserStorage {
+    private ArrayList<User> usersList = new ArrayList<>();
 
-    @Autowired
-    public UsersStorage(ArrayList<User> usersList) {
-        this.usersList = usersList;
-    }
-
-    public void saveUser(User user) {
-        usersList.add(user);
+    public boolean saveUser(User user) {
+        return usersList.add(user);
     }
 
     public boolean checkLogin(String login) {
@@ -28,7 +21,7 @@ public class UsersStorage {
         return true;
     }
 
-    public boolean checkLoginAndPassword(String login, String password) {
+    public boolean findUserByLoginAndPassword(String login, String password) {
         for (User user : usersList) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return true;
